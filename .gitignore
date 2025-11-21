@@ -38,3 +38,7 @@ Thumbs.db
 *.VC.db
 *.VC.opendb
 EOF
+
+#eseguibili senza estensione mirati
+fake_process_test
+sched_sim
