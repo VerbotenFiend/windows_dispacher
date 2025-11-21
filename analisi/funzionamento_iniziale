@@ -1,0 +1,15 @@
+Scorrere del Tempo (TIME): La simulazione avanza per "tick" discreti (es. TIME: 00000036).
+Stato dei Processi:
+running pid: Indica quale processo sta usando la CPU. Se vedi -1, la CPU è idle (inattiva).
+waiting pid: Elenca i processi che sono bloccati in attesa di qualcosa (es. I/O).
+remaining time: Quanto tempo manca alla fine dell'operazione corrente (burst CPU o attesa I/O).
+Eventi Chiave:
+end burst: Un'operazione (CPU o I/O) è terminata.
+move to ready: Un processo ha finito di aspettare o è stato interrotto dallo scheduler (fine quantum) ed è pronto per essere eseguito di nuovo.
+move to waiting: Un processo ha finito di usare la CPU e ora deve aspettare (es. fa una richiesta I/O).
+Esempio concreto dall'output:
+
+Dal tempo 36 al 40, il processo pid: 2 è in esecuzione (running).
+Al tempo 40, il suo remaining time arriva a 0. Vediamo end burst e move to ready. Questo accade perché il suo quantum (5 unità) è scaduto.
+Tuttavia, al tempo 41, pid: 2 riprende subito l'esecuzione. Perché? Perché l'altro processo (pid: 1) è ancora in stato waiting (sta facendo I/O), quindi pid: 2 è l'unico pronto e lo scheduler lo sceglie di nuovo immediatamente.
+In sintesi: il sistema funziona correttamente, alternando i processi quando possibile e gestendo le attese. Se hai dubbi su un passaggio specifico, chiedi pure!

@@ -83,6 +83,17 @@ void FakeOS_simStep(FakeOS* os){
     }
   }
 
+  // scan ready list
+  aux=os->ready.first;
+  while(aux){
+    FakePCB* pcb=(FakePCB*)aux;
+    printf("\tready pid: %d\n", pcb->pid);
+    if (pcb->events.first) {
+      printf("\t\tremaining time:%d\n",((ProcessEvent*)pcb->events.first)->duration);
+    }
+    aux=aux->next;
+  }
+
   // scan waiting list, and put in ready all items whose event terminates
   aux=os->waiting.first;
   while(aux) {
