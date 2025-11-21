@@ -1,0 +1,40 @@
+cat << 'EOF' > .gitignore
+# Compilati ed eseguibili
+*.out
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.a
+*.lib
+
+# File temporanei e di build
+*.log
+*.tmp
+*.bak
+*.swp
+*.dSYM/
+*.pch
+
+# Cartelle di build
+build/
+Debug/
+Release/
+bin/
+obj/
+
+# File di sistema
+.DS_Store
+Thumbs.db
+
+# File generati da IDE
+*.user
+*.suo
+*.ncb
+*.pdb
+*.idb
+*.opensdf
+*.VC.db
+*.VC.opendb
+EOF
