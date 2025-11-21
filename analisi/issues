@@ -1,0 +1,4 @@
+1. non mi ricordo la password sudo di wsl
+2. la ready queue non è visibile
+3. i file out vanno codicifati in utf8 invece che utf16 per questo sono costretto ad eseguire con:
+    wsl ./sched_sim example/p1.txt example/p2.txt example/p3.txt example/p4.txt | Out-File -Encoding utf8 example/out.txt
